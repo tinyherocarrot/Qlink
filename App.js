@@ -1,10 +1,10 @@
 import React from 'react';
 import { Alert, StyleSheet, Text, View, TextInput, Button } from 'react-native';
 import styled from 'styled-components/native'
+import LinearGradient from "react-native-linear-gradient";
 
-const StyledView = styled.View`
+const StyledGradient = styled(LinearGradient)`
   flex: 1;
-  background-color: linear-gradient(to bottom left, #33ccff 5%, #9900cc 100%);
   align-items: center;
   justify-content: center;
 `;
@@ -33,12 +33,11 @@ export default class App extends React.Component {
         .join(" "));
   }
   render() {
-    return <StyledView>
-        <StyledInput style={{ height: 40 }} placeholder="Type here to translate!" onChangeText={(text) => this._onChangeText(text)} />
+    return <StyledGradient colors={["#33ccff", "#9900cc"]} start={{ x: 1.0, y: 0.15 }} end={{ x: 0.5, y: 1.0 }}>
+        <StyledInput style={{ height: 40 }} placeholder="Type here to translate!" onChangeText={text => this._onChangeText(text)} />
         <Text>{}</Text>
-        <StyledButton title='Submit' onPress={() => this._onPressButton}/>
-        
-      </StyledView>;
+        <StyledButton title="Submit" onPress={() => this._onPressButton} />
+      </StyledGradient>;
   }
 }
 
