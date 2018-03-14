@@ -2,6 +2,7 @@ import React from 'react';
 import { Alert, StyleSheet, Text, View, TextInput, Button } from 'react-native';
 import styled from 'styled-components/native'
 import LinearGradient from "react-native-linear-gradient";
+import { Tabs } from "./config/router";
 
 const StyledGradient = styled(LinearGradient)`
   flex: 1;
@@ -37,6 +38,7 @@ export default class App extends React.Component {
         <StyledInput style={{ height: 40 }} placeholder="Type here to translate!" onChangeText={text => this._onChangeText(text)} />
         <Text>{}</Text>
         <StyledButton title="Submit" onPress={() => this._onPressButton} />
+        <Tabs/>
       </StyledGradient>;
   }
 }
